@@ -7,7 +7,14 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+}
 
+function generatePassword() {
+  var passwordLength = prompt("Enter the length of your password");
+  var hasNumbers = confirm("Include numbers?");
+  var hasLower = confirm("Include lowercase characters?");
+  var hasUpper = confirm("Include uppercase characters?");
+  var hasSpecial = confirm("Include special characters?");
 }
 
 // Add event listener to generate button
