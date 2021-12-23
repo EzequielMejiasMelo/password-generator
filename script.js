@@ -6,6 +6,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
+  //checks if password undefined for cases where user chose wrong or no input
   if (password) {
     passwordText.value = password;
   }
@@ -141,6 +142,7 @@ function generatePassword() {
     };
   }
 
+  //checks to see if user chose no char types
   if (!hasLower && !hasNumbers && !hasSpecial && !hasUpper) {
     alert("Must select at least one character option");
     return;
