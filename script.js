@@ -6,7 +6,9 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  if (password) {
+    passwordText.value = password;
+  }
   return;
 }
 
@@ -100,6 +102,14 @@ function generatePassword() {
 
   // inputs for password decisions
   var passwordLength = prompt("Enter the length of your password");
+  parseInt(passwordLength);
+  if (passwordLength < 8) {
+    alert("Password must be at least 8 characters");
+    return;
+  } else if (passwordLength > 128) {
+    alert("Password must be no greater than 128 characters");
+    return;
+  }
   var hasNumbers = confirm("Include numbers?");
   var hasLower = confirm("Include lowercase characters?");
   var hasUpper = confirm("Include uppercase characters?");
