@@ -141,6 +141,11 @@ function generatePassword() {
     };
   }
 
+  if (!hasLower && !hasNumbers && !hasSpecial && !hasUpper) {
+    alert("Must select at least one character option");
+    return;
+  }
+
   // creates password 
   var password = "";
   for (var i = 0; i <= passwordLength; i++) {
