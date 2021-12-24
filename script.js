@@ -117,29 +117,29 @@ function generatePassword() {
   var hasSpecial = confirm("Include special characters?");
 
   // creates array and adds chosen chars to array
-  var possibleChars = ""
+  var possibleChars = "";
   if (hasNumbers) {
     for (let x in numericCharacters) {
       possibleChars += numericCharacters[x];
-    };
+    }
   }
 
   if (hasSpecial) {
     for (let x in specialCharaters) {
       possibleChars += specialCharaters[x];
-    };
+    }
   }
 
   if (hasUpper) {
     for (let x in upperCasedCharacters) {
       possibleChars += upperCasedCharacters[x];
-    };
+    }
   }
 
   if (hasLower) {
     for (let x in lowerCasedCharacters) {
       possibleChars += lowerCasedCharacters[x];
-    };
+    }
   }
 
   //checks to see if user chose no char types
@@ -148,7 +148,7 @@ function generatePassword() {
     return;
   }
 
-  // creates password 
+  // creates password
   var password = "";
   for (var i = 0; i <= passwordLength; i++) {
     var randomNumber = Math.floor(Math.random() * possibleChars.length);
